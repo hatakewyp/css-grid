@@ -51,7 +51,9 @@
       border: 0;
     }
 
-    .gallery {}
+    .gallery {
+
+    }
 
 
 
@@ -82,6 +84,30 @@
   </style>
 
   <script>
+
+    function generateHTML([h, v]) {
+      return `
+        <div class="item h${h} v${v}">
+          <img src="images/${randomNumber(12)}.jpg">
+          <div class="item__overlay">
+            <button>View -></button>
+          </div>
+        </div>
+      `;
+    }
+
+    function randomNumber(limit) {
+      return Math.floor(Math.random() * limit) + 1;
+    }
+
+    function init() {
+      const gallery = document.querySelector('.gallery'),
+            overlay = document.querySelector('.overlay'),
+            overlayImage = overlay.querySelector('img'),
+            overlayClose = overlay.querySelector('.close');
+    }
+
+    document.addEventListener('DOMContentLoaded', init, false);
   </script>
 </body>
 
